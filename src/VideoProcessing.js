@@ -19,7 +19,7 @@ function VideoProcessing() {
 
     try {
       // Send a request to the backend to start the video processing
-      await axios.post("http://localhost:5000/processVideo", { videoUrl });
+      await axios.post("http://38.242.239.1:5000/processVideo", { videoUrl });
       alert("Video processing started!");
     } catch (error) {
       console.error("Error processing video:", error);
@@ -54,7 +54,7 @@ function VideoProcessing() {
           <h2 className="video-title">Processed Video</h2>
           <video controls className="video-player">
             <source
-              src="http://localhost:5000/video/output.mp4"
+              src="http://38.242.239.1:5000/video/output.mp4"
               type="video/mp4"
             />
             Your browser does not support the video tag.
