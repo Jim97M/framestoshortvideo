@@ -52,7 +52,7 @@ function VideoProcessing() {
       {videoProcessed && (
         <div className="video-container">
           <h2 className="video-title">Processed Video</h2>
-          <video controls className="video-player">
+          <video controls className="video-player" width="400" height="200">
             <source
               src="http://38.242.239.1:5000/video/output.mp4"
               type="video/mp4"
