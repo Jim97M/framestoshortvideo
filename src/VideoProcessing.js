@@ -73,9 +73,13 @@ function VideoProcessing() {
             />
             Your browser does not support the video tag.
           </video>
-          <button onClick={handleDownloadClick} className="button">
+          <a
+            href="http://38.242.239.1:5000/video/output.mp4"
+            download="processed_video.mp4"
+            className="button" // Use button styles for the link
+          >
             <h2 className="button-text">Download Video</h2>
-          </button>
+          </a>
         </div>
       )}
     </div>
