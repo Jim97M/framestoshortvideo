@@ -29,6 +29,20 @@ function VideoProcessing() {
     }
   };
 
+  const handleDownloadClick = () => {
+    // Create a link element
+    const link = document.createElement("a");
+
+    // Set the href attribute to the URL of the processed video
+    link.href = "http://38.242.239.1:5000/video/output.mp4";
+
+    // Set the download attribute to specify the filename
+    link.download = "processed_video.mp4";
+
+    // Simulate a click on the link to trigger the download
+    link.click();
+  };
+
   return (
     <div className="container">
       <h1 className="title">Video Processor</h1>
@@ -59,6 +73,9 @@ function VideoProcessing() {
             />
             Your browser does not support the video tag.
           </video>
+          <button onClick={handleDownloadClick} className="button">
+            <h2 className="button-text">Download Video</h2>
+          </button>
         </div>
       )}
     </div>
