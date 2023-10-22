@@ -1,0 +1,58 @@
+/* Default styles for larger screens */
+.container {
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    align-self: center;
+    width: 700px;
+    height: 800px;
+    padding: 20px 10px 20px 30px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border: 0.1px solid black;
+    background-color: white;
+}
+
+.title {
+    align-self: center;
+    justify-self: center;
+}
+
+.input {
+    height: 50px;
+}
+
+.button {
+    background-color: rgb(32, 99, 32);
+    height: 70px;
+    border: none;
+    margin-top: 100px;
+}
+
+/* Media query for screens with a maximum width of 400px */
+@media (min-width: 300px) and (max-width: 550px) {
+    .container {
+        width: 390px;
+        height: 700px;
+        padding: 10px 5px 10px 15px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        border: none; /* If you want to remove the border */
+        background-color: white;
+    }
+
+    .title {
+        align-self: center;
+        justify-self: center;
+    }
+
+    .input {
+        height: 30px;
+    }
+
+    .button {
+        background-color: rgb(32, 99, 32);
+        height: 50px;
+        border: none;
+        margin-top: 80px;
+        width: 380px;
+    }
+}

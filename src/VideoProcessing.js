@@ -1,7 +1,7 @@
 // src/VideoProcessor.js
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "./styless.scss";
+import "./styless.css";
 function VideoProcessing() {
   const [videoUrl, setVideoUrl] = useState("");
   const [processing, setProcessing] = useState(false);
@@ -29,18 +29,14 @@ function VideoProcessing() {
     }
   };
 
-  const handleDownloadClick = () => {
-    // Create a link element
+  const onButtonClick = () => {
+    const pdfUrl = "http://38.242.239.1:5000/video/output.mp4";
     const link = document.createElement("a");
-
-    // Set the href attribute to the URL of the processed video
-    link.href = "http://38.242.239.1:5000/video/output.mp4";
-
-    // Set the download attribute to specify the filename
-    link.download = "processed_video.mp4";
-
-    // Simulate a click on the link to trigger the download
+    link.href = pdfUrl;
+    link.download = "short.mp4"; // specify the filename
+    document.body.appendChild(link);
     link.click();
+    document.body.removeChild(link);
   };
 
   return (
@@ -66,20 +62,15 @@ function VideoProcessing() {
       {videoProcessed && (
         <div className="video-container">
           <h2 className="video-title">Processed Video</h2>
-          <video controls className="video-player" width="400" height="200">
+          <video controls className="video-player" width="390" height="200">
             <source
-              src="http://38.242.239.1:5000/video/output.mp4"
+              src="http://localhost:5000/video/output.mp4"
               type="video/mp4"
             />
             Your browser does not support the video tag.
           </video>
-          <a
-            href="http://38.242.239.1:5000/video/output.mp4"
-            download="processed_video.mp4"
-            className="button" // Use button styles for the link
-          >
-            <h2 className="button-text">Download Video</h2>
-          </a>
+          <button onClick={onButtonClick}>Download Video</button>
+          {/* <h2 className="button-text">Download Video</h2> */}
         </div>
       )}
     </div>
